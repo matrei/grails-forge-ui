@@ -19,8 +19,6 @@ fi
 
 git config --global user.email "${COMMIT_EMAIL}"
 git config --global user.name "${COMMIT_NAME}"
-git config --global credential.helper "store --file=~/.git-credentials"
-echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
 
 ./gradlew build || EXIT_STATUS=$?
 
@@ -37,7 +35,7 @@ cp -r ../build/launch/* .
 #else
 git add -A
 git commit -a -m "Updating $GITHUB_SLUG gh-pages branch for Github Actions run:$GITHUB_RUN_ID"
-git push origin HEAD
+git push https://oauth2:${GH_TOKEN}@github.com/${GITHUB_SLUG}.git gh-pages
 #fi
 cd ..
 rm -rf gh-pages
