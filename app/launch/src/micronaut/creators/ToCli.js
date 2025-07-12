@@ -37,6 +37,6 @@ export default class ToCli {
       return acc
     }, [])
 
-    return ['grails', command, ...args, applicationName].join(' ').toLowerCase()
+    return ['grails-forge-cli', command, ...args, applicationName].join(' ').toLowerCase()
   }
 }
