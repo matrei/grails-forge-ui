@@ -1,5 +1,4 @@
 import React from 'react'
-import GitHubIcon from '@material-ui/icons/GitHub'
 import Button from 'react-materialize/lib/Button'
 import Dropdown from 'react-materialize/lib/Dropdown'
 import Icon from 'react-materialize/lib/Icon'
@@ -8,7 +7,6 @@ import messages from '../../constants/messages.json'
 
 import { GENERATE_SHORTCUT } from '../../constants/shortcuts'
 import useKeyboardShortcuts from '../../hooks/useKeyboardShortcuts'
-import { useGitHubShareLink, useStarterForm } from '../../state/store'
 import OtherCommands from '../OtherCommands'
 import { TooltipWrapper } from '../TooltipButton'
 
@@ -20,7 +18,6 @@ const GenerateButtons = ({
   baseUrl,
 }) => {
   const createPayload = useStarterForm()
-  const gitHubCreateHref = useGitHubShareLink()
 
   useKeyboardShortcuts(GENERATE_SHORTCUT.keys, generateProject, disabled)
 
