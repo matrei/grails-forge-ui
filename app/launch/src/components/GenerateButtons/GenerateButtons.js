@@ -57,32 +57,6 @@ const GenerateButtons = ({
         </Button>
       }
     >
-      <TooltipWrapper tooltip={messages.tooltips.createRepo}>
-        <a
-          href={gitHubCreateHref}
-          disabled={disabled}
-          waves="light"
-          className={theme}
-          style={{
-            alignItems: 'center',
-            display: 'flex',
-          }}
-          onClick={cloneProject}
-        >
-          <GitHubIcon
-            style={{
-              marginLeft: '4px',
-              marginRight: '28px',
-            }}
-            fontSize="small"
-            className="action-button-icon"
-          >
-            clone_app
-          </GitHubIcon>
-          Push to GitHub
-        </a>
-      </TooltipWrapper>
-
       <TooltipWrapper tooltip={messages.tooltips.generate}>
         <a
           role="button"
